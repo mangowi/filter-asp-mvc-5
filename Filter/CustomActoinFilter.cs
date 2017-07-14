@@ -31,8 +31,16 @@ namespace Filter
     }
 
 
-    public class CustomResultFilter: FilterAttribute, IResultFilter
+    public class CustomResultFilter : FilterAttribute, IResultFilter
     {
+        void IResultFilter.OnResultExecuted(ResultExecutedContext filterContext)
+        {
+            filterContext.HttpContext.Response.Write("<p>OnResultExecuted<p/>");
+        }
 
+        void IResultFilter.OnResultExecuting(ResultExecutingContext filterContext)
+        {
+            filterContext.HttpContext.Response.Write("<p>OnResultExecuting<p/>");
+        }
     }
 }
