@@ -29,4 +29,10 @@ namespace Filter
 
         }
     }
+
+
+    public class CustomResultFilter: FilterAttribute, IResultFilter
+    {
+
+    }
 }
