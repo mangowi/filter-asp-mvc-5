@@ -13,5 +13,12 @@ namespace Filter.Controllers
         {
             return View();
         }
+
+        protected override void OnActionExecuted(ActionExecutedContext filterContext)
+        {
+
+            var result = filterContext.Result;
+            base.OnActionExecuted(filterContext);
+        }
     }
 }
